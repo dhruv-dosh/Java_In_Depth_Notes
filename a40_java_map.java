@@ -109,3 +109,45 @@ Here are the interview definitions for the requested Java Map interface and its 
 * **Key Behavior:** The presence of a key-value mapping does **not** prevent the key from being garbage collected. Once the key is collected, its entry is automatically removed from the map.
 * **Use Case:** Ideal for implementing lightweight, in-memory caches or registries where you don't want the map itself to prevent objects from being cleared from memory.
 */
+
+
+/*
+Here are the interview definitions for the remaining Map interfaces and the `ConcurrentHashMap` implementation:
+
+### 7. SortedMap Interface
+
+* **Definition:** An interface that **extends `Map`** and ensures that its key-value entries are maintained in **ascending order**, sorted either by the keys' natural ordering or by a specified `Comparator`.
+* **Key Methods:** Provides basic **range-view operations** like `subMap()`, `headMap()`, and `tailMap()`, as well as access to the keys at the ends: `firstKey()` and `lastKey()`.
+* **Implementation:** Its primary implementation is `TreeMap`.
+
+---
+
+### 8. NavigableMap Interface
+
+* **Definition:** An interface that **extends `SortedMap`** and provides a comprehensive set of navigation methods for sorted maps.
+* **Key Purpose:** It allows for highly precise and flexible lookups and retrieval of entries **relative to a given key**.
+* **Key Methods:** Introduces methods like `lowerKey()`, `floorKey()`, `ceilingKey()`, and `higherKey()`, which find keys less than, less than or equal to, greater than or equal to, or greater than a given key, respectively. It also provides a `descendingMap()` view.
+* **Implementation:** The main implementations are `TreeMap` and the thread-safe `ConcurrentSkipListMap`.
+
+---
+
+### 9. ConcurrentMap Interface
+
+* **Definition:** An interface that **extends `Map`** and defines methods specifically for **atomic compound operations** in a concurrent environment.
+* **Core Purpose:** It guarantees thread-safe behavior for basic `Map` operations and introduces methods to **prevent race conditions** on common sequences like "check then put."
+* **Key Atomic Methods:**
+    * `putIfAbsent(K key, V value)`: Inserts a value only if the key is not already present.
+    * `remove(Object key, Object value)`: Removes an entry only if the key maps to the given value.
+    * `replace(K key, V oldValue, V newValue)`: Replaces the value only if the current value matches the `oldValue`.
+* **Implementation:** The most common implementation is `ConcurrentHashMap`.
+
+---
+
+### 10. ConcurrentHashMap
+
+* **Definition:** A highly scalable, thread-safe implementation of the `ConcurrentMap` and `Map` interfaces, designed to offer high throughput for concurrent read and write operations.
+* **Thread-Safety Mechanism:** It achieves high concurrency using **fine-grained, segment-level locking** (prior to Java 8) or **lock-free techniques (CAS operations)** combined with synchronized blocks only on the specific array node (Java 8+). It **does not lock the entire map**.
+* **Concurrency:** Allows **simultaneous reads** and a **high degree of concurrent writes** on different parts of the map.
+* **Nulls:** **Does not allow `null` keys or `null` values**, to avoid ambiguity during concurrent operations.
+
+*/
