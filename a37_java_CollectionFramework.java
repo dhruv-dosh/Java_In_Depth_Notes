@@ -80,3 +80,56 @@ public class a37_java_CollectionFramework {
     * **Answer:** An iterator (like the one returned by `ArrayList.iterator()`) that immediately throws a **`ConcurrentModificationException`** if the collection is structurally modified by any other thread (or code) during the iteration. It is used to detect errors early.
 
 */
+
+
+/*
+Java Collections Framework
+The Java collections framework provides a set of interfaces and classes to implement various data structures and algorithms.
+
+Interfaces of Collections FrameWork
+The Java collections framework provides various interfaces. These interfaces include several methods to perform different operations on collections.
+
+Collections Framework Vs. Collection Interface
+The Collection interface is the root interface of the collections framework. The framework includes other interfaces as well: Map and Iterator. These interfaces may also have subinterfaces.
+
+List Interface
+The List interface is an ordered collection that allows us to add and remove elements like an array. 
+
+Set Interface
+The Set interface allows us to store elements in different sets similar to the set in mathematics. It cannot have duplicate elements. 
+
+Queue Interface
+The Queue interface is used when we want to store and access elements in First In, First Out manner.  
+
+Java Iterator Interface
+In Java, the Iterator interface provides methods that can be used to access elements of collections.
+
+
+the Iterator interface is not the parent interface of the Collection interface in Java.
+In the Java Collections Framework hierarchy:
+The root for iteration is the Iterable interface (in java.lang).
+The Collection interface (in java.util) extends the Iterable interface. This means that every Collection is an Iterable.
+
+
+Why the Collections Framework?
+The Java collections framework provides various data structures and algorithms that can be used directly. This has two main advantages:
+We do not have to write code to implement these data structures and algorithms manually.
+Our code will be much more efficient as the collections framework is highly optimized.
+*/
+
+/*
+Java Collection Interface
+The Collection interface is the root interface of the Java collections framework.
+There is no direct implementation of this interface. However, it is implemented through its subinterfaces like List, Set, and Queue.
+
+Methods of Collection
+The Collection interface includes various methods that can be used to perform different operations on objects. These methods are available in all its subinterfaces.
+
+add() - inserts the specified element to the collection
+size() - returns the size of the collection
+remove() - removes the specified element from the collection
+iterator() - returns an iterator to access elements of the collection
+addAll() - adds all the elements of a specified collection to the collection
+removeAll() - removes all the elements of the specified collection from the collection
+clear() - removes all the elements of the collection
+*/
