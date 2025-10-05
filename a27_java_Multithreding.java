@@ -94,15 +94,6 @@ public class a27_java_Multithreding {
 }
 
 /*
-You are correct. To make the file a complete study resource, I should include the formal definitions within the summary sections.
-
-Here is the revised TXT file containing all the concepts, questions, and detailed definitions.
-
------
-
-### **MULTITHREADING\_CONCEPTS\_SUMMARY\_WITH\_DEFINITIONS.txt**
-
-```txt
 ========================================================================
 JAVA MULTITHREADING AND CONCURRENCY CONCEPTS
 ========================================================================
@@ -204,5 +195,5 @@ SECTION 4: CONCURRENCY FRAMEWORK (`java.util.concurrent`)
 
 22. `ThreadLocal`:
     -   Definition: A mechanism that creates variables local to a thread. Each thread that accesses a `ThreadLocal` variable gets its own independently initialized copy of the variable, efficiently achieving thread safety by avoiding shared state entirely.
-```
+
 */
