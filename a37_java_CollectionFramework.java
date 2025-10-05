@@ -133,3 +133,22 @@ addAll() - adds all the elements of a specified collection to the collection
 removeAll() - removes all the elements of the specified collection from the collection
 clear() - removes all the elements of the collection
 */
+
+//List
+/*
+Classes that Implement List
+Since List is an interface, we cannot create objects from it.
+
+In order to use the functionalities of the List interface, we can use these classes:
+
+ArrayList
+LinkedList
+Vector
+Stack
+
+Java List vs. Set
+Both the List interface and the Set interface inherit the Collection interface. However, there exists some difference between them.
+
+Lists can include duplicate elements. However, sets cannot have duplicate elements.
+Elements in lists are stored in some order. However, elements in sets are stored in groups like sets in mathematics.
+*/
