@@ -100,3 +100,10 @@ poll() - Returns and removes the head of the queue. Returns null if the queue is
 * **Relationship to BlockingQueue:** Since `BlockingDeque` extends `BlockingQueue`, you can use it as a standard FIFO blocking queue by only using the `put()` (alias for `putLast()`) and `take()` (alias for `takeFirst()`) methods.
 
 */
+
+
+/*
+Iterating the ArrayDeque
+iterator() - returns an iterator that can be used to iterate over the array deque
+descendingIterator() - returns an iterator that can be used to iterate over the array deque in reverse order
+*/
