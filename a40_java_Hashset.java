@@ -88,3 +88,22 @@ public class a40_java_Hashset {
 * **Performance:** All core operations (`add`, `remove`, `contains`, and navigation methods) have a time complexity of **$O(\log n)$**.
 * **Nulls:** **Does not allow `null` elements**, as they cannot be reliably compared/sorted.
 */
+
+
+/*
+A **Hash Table** (or Hash Map) is a foundational data structure that provides the most efficient mechanism for storing and retrieving data in **key-value pairs**.
+
+### Hash Table Interview Definition
+
+* **Structure:** It is logically an associative array, but it is physically implemented using an underlying **array** (often called buckets or slots) combined with a **hash function**.
+* **Mechanism (Hashing):**
+    1.  When an element is inserted, the **Key** is passed to a **hash function**.
+    2.  The hash function computes a fixed-size integer value (the hash code).
+    3.  This hash code is used to calculate the specific **index** (or bucket) in the array where the corresponding **Value** will be stored.
+* **Time Complexity:** The average-case time complexity for insertion, retrieval (`get`), and deletion is **$O(1)$ (constant time)**, making it exceptionally fast for lookups.
+* **Collision Handling:** Since multiple keys can map to the same index (a **collision**), hash tables employ resolution techniques:
+    * **Separate Chaining:** Storing a linked list or, since Java 8, a **balanced tree** at each array index to hold all colliding entries.
+    * **Open Addressing:** Probing for the next available empty slot in the array.
+* **Use Cases:** Primary implementation for dictionaries, caches (due to $O(1)$ access), database indexing, and the Java classes `HashMap` and `HashSet`.
+
+*/
