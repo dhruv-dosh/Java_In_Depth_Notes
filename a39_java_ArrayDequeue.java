@@ -99,11 +99,32 @@ poll() - Returns and removes the head of the queue. Returns null if the queue is
 * **Implementations:** The primary implementation is `LinkedBlockingDeque`.
 * **Relationship to BlockingQueue:** Since `BlockingDeque` extends `BlockingQueue`, you can use it as a standard FIFO blocking queue by only using the `put()` (alias for `putLast()`) and `take()` (alias for `takeFirst()`) methods.
 
-*/
 
+ArrayBlockingQueue: Fixed-size (bounded), array-backed BlockingQueue; uses a single lock; lower concurrency but predictable memory.
+
+LinkedBlockingQueue: Optionally bounded, linked-node-backed BlockingQueue; uses two separate locks (one for read, one for write); higher concurrency (throughput).
+*/
 
 /*
 Iterating the ArrayDeque
 iterator() - returns an iterator that can be used to iterate over the array deque
 descendingIterator() - returns an iterator that can be used to iterate over the array deque in reverse order
+
+
+ArrayDeque Vs. LinkedList Class
+Both ArrayDeque and Java LinkedList implements the Deque interface. However, there exist some differences between them.
+
+LinkedList supports null elements, whereas ArrayDeque doesn't.
+Each node in a linked list includes links to other nodes. That's why LinkedList requires more storage than ArrayDeque.
+If you are implementing the queue or the deque data structure, an ArrayDeque is likely to faster than a LinkedList.
+
+
+ArrayDeque as a Stack
+To implement a LIFO (Last-In-First-Out) stacks in Java, it is recommended to use a deque over the Stack class. The ArrayDeque class is likely to be faster than the Stack class.
+
+ArrayDeque provides the following methods that can be used for implementing a stack.
+
+push() - adds an element to the top of the stack
+peek() - returns an element from the top of the stack
+pop() - returns and removes an element from the top of the stack
 */
