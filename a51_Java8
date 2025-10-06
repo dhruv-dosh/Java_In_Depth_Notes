@@ -1,0 +1,121 @@
+Java 8
+Java 8 (released in 2014) was a major update that introduced features to support functional programming in Java. Its primary goal was to improve developer productivity and enable parallel programming through constructs like Lambda Expressions, Functional Interfaces, and the Stream API.
+
+
+Lambda Expression
+A lambda expression is a short block of code that takes parameters and returns a value, acting as a concise implementation of an abstract method defined in a functional interface. It allows treating functionality as a method argument or code as data, reducing boilerplate code (especially compared to anonymous inner classes). The basic syntax is (parameters) -> expression or (parameters) -> { statements; }.
+
+
+
+Functional Interface
+A functional interface is an interface that contains exactly one abstract method. It is also known as a Single Abstract Method (SAM) interface. The presence of a single abstract method makes it compatible with lambda expressions, which provide the implementation for that single method. It is often annotated with @FunctionalInterface (though this is optional).
+
+
+
+
+Built-in Functional Interfaces (from java.util.function)
+These are general-purpose functional interfaces used throughout the JDK, especially with the Stream API:
+
+Predicate<T>: Represents a boolean-valued function of one argument. Its abstract method is boolean test(T t). It is primarily used for filtering data.
+
+Consumer<T>: Represents an operation that accepts a single input argument and returns no result (void). Its abstract method is void accept(T t). It's used for performing a side-effect, like printing or logging.
+
+Function<T, R>: Represents a function that accepts one argument and produces a result. Its abstract method is R apply(T t). It is primarily used for transforming data from one type (T) to another (R).
+
+Supplier<T>: Represents a supplier of results. It takes no arguments and returns a value of type T. Its abstract method is T get(). It is often used for lazy generation of values.
+
+
+Method Reference
+A method reference is a shorthand syntax for a lambda expression that simply calls an existing method. It makes the code more readable and concise by referring to methods directly by their names using the double colon operator (::). It can refer to static methods, instance methods of a particular object, or instance methods of an arbitrary object of a particular type.
+
+Constructor Reference
+A constructor reference is a special type of method reference that refers to a class's constructor. Its syntax is ClassName::new. It is used to create new instances of a class in a functional style, often to be used by a functional interface like Supplier or Function.
+
+
+What is a Stream in Java 8?
+A Java Stream is a sequence of elements from a source (like a Collection or an Array) that supports aggregate operations, such as filtering, mapping, and reducing.
+
+Key Characteristics:
+
+Not a Data Structure: A stream does not store data itself; it is a mechanism for processing data.
+
+Functional: It enables a declarative, functional programming style by defining what to do rather than how to do it (like traditional for or while loops).
+
+Lazy Evaluation: Intermediate operations are not executed until a terminal operation is called. This allows for efficiency optimizations.
+
+
+Immutability: Streams do not modify the original data source. They produce a new stream for the result of each intermediate operation.
+
+
+Pipelining: Operations can be chained together (pipelined) to form a complete data processing query.
+
+Main Components of a Stream Pipeline
+A stream pipeline is composed of three main parts:
+
+Component	Description	Example
+1. Source	The data source from which the stream is created. This data is not modified.	list.stream()
+2. Intermediate Operations	Operations that transform the stream into another stream. They are lazy and can be chained.	.filter(...) , .map(...) , .sorted(...)
+3. Terminal Operation	The operation that consumes the stream, starts the processing, and produces a final result or a side-effect. A stream can have only one terminal operation.	.collect(...) , .forEach(...) , .count()
+
+Export to Sheets
+Key Methods Used with Streams
+Stream methods are categorized into two types:
+
+A. Intermediate Operations (Return a Stream)
+These operations transform the data and are non-terminal (lazy).
+
+Method	Functional Interface Used	Purpose
+filter(Predicate<T>)	Predicate	Selects elements that match a given condition.
+map(Function<T, R>)	Function	Transforms each element into a new element (potentially of a different type).
+flatMap(Function<T, Stream<R>>)	Function	Transforms each element into a stream of elements, and then flattens all those streams into one single stream.
+distinct()	N/A	Returns a stream with unique elements.
+sorted() / sorted(Comparator)	Comparator	Sorts the elements in the stream.
+limit(long maxSize)	N/A	Truncates the stream to a maximum size.
+
+Export to Sheets
+B. Terminal Operations (Return a Result or void)
+These operations are the final step that triggers the stream execution.
+
+Method	Functional Interface Used	Purpose
+collect(Collector)	Collector	Performs a mutable reduction (e.g., gathering elements into a List, Set, or Map).
+forEach(Consumer<T>)	Consumer	Performs an action for each element (produces a side-effect, like printing).
+reduce(BinaryOperator)	BinaryOperator	Combines elements into a single result using a combining function (e.g., summing all numbers).
+count()	N/A	Returns the number of elements in the stream.
+anyMatch(Predicate)	Predicate	Checks if any element matches the predicate (returns boolean).
+findFirst()	N/A	Returns the first element of the stream wrapped in an Optional.
+
+Export to Sheets
+Example Code of Using Streams
+This example demonstrates a typical stream pipeline to filter, transform, and collect data.
+
+Java
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamExample {
+
+    public static void main(String[] args) {
+        
+        List<String> names = Arrays.asList("Alex", "brian", "chad", "david", "Alice");
+
+        // Goal: Get a list of names that start with 'A', convert them to uppercase,
+        // and collect the result into a new List.
+
+        List<String> filteredNames = names.stream()               // 1. Stream Source
+            .filter(name -> name.startsWith("A"))                // 2. Intermediate Operation: Filter
+            .map(String::toUpperCase)                            // 2. Intermediate Operation: Map (transform)
+            .sorted()                                            // 2. Intermediate Operation: Sort
+            .collect(Collectors.toList());                       // 3. Terminal Operation: Collect into a List
+
+        // Result should be [ALEX, ALICE]
+        System.out.println("Result List: " + filteredNames);
+        
+        // Example of a terminal operation with a side-effect (forEach)
+        System.out.println("\nUsing forEach:");
+        names.stream()
+            .map(name -> "Hello " + name)
+            .forEach(System.out::println);
+    }
+}
