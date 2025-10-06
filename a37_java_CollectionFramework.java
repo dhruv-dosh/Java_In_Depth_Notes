@@ -88,6 +88,17 @@ Negative integer: this object is less than otherObject.
 Zero: this object is equal to otherObject.
 Positive integer: this object is greater than otherObject.
 
+2. Comparator Interface
+Purpose: It defines an external or custom ordering that can be used to sort a class that does not implement Comparable or when you need sorting based on a criterion other than the natural ordering (e.g., sorting Employee by name, then by age). It provides multiple sorting sequences.
+
+Implementation: A separate class (or a lambda/anonymous class since Java 8) implements the Comparator<T> interface and overrides the single abstract method:
+public int compare(T object1, T object2)
+Usage: The comparator instance is passed as a second argument to sorting methods like Collections.sort(List, Comparator) or Arrays.sort(Object[], Comparator).
+
+Result of compare(T o1, T o2):
+Negative integer: o1 is less than o2.
+Zero: o1 is equal to o2.
+Positive integer: o1 is greater than o2
 
 
 9.  **WHAT IS A FAIL-FAST ITERATOR?**
