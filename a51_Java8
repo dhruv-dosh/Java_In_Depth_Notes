@@ -119,3 +119,8 @@ public class StreamExample {
             .forEach(System.out::println);
     }
 }
+
+
+Streams are considered immutable because intermediate operations (like map and filter) do not modify the existing stream object; instead, they produce a new stream.
+
+This design choice ensures non-interference with the data source and guarantees thread safety, making the stream pipeline safe for parallel execution.
