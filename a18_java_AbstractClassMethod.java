@@ -1,5 +1,7 @@
 package Java;
 /*
+Abstraction is an OOP principle that focuses on exposing only the essential features of an object or system, while hiding the unnecessary implementation details.
+
 Abstract class: is a restricted class that cannot be used to create objects
 (to access it, it must be inherited from another class). Abstract method: can only be used in an
 abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
