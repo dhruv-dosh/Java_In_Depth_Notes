@@ -68,6 +68,7 @@ public class a37_java_CollectionFramework {
 7.  **HOW DOES HASHSET ENSURE UNIQUENESS?**
     * **Answer:** `HashSet` internally uses a `HashMap`. When an element is added, the element becomes the key in the `HashMap`. The combination of the object's `hashCode()` and `equals()` methods guarantees that no two logically equal objects can be stored.
 
+A HashSet works by using a HashMap internally to store its elements, with the elements themselves acting as keys in the HashMap. When an element is added, its hashCode() is used to calculate a hash value, which determines the element's position (or "bucket") in the internal HashMap. Because HashMaps only store unique keys, the HashSet can efficiently ensure that no duplicate elements are added. The actual value in the HashMap is a constant, dummy object called PRESENT
 ---
 
 **IV. SORTING AND ITERATION**
@@ -75,6 +76,19 @@ public class a37_java_CollectionFramework {
 8.  **COMPARABLE vs. COMPARATOR**
     * **COMPARABLE:** Defines an object's **Natural Ordering** (e.g., sorting names alphabetically). It is implemented *by the class itself* (`compareTo()` method).
     * **COMPARATOR:** Defines an **External/Custom Ordering** (e.g., sorting employees by salary). It is implemented *by a separate class* (`compare()` method).
+
+Comparable and Comparator are both interfaces in Java used for sorting objects of user-defined classes.
+1. Comparable Interface
+Purpose: It defines the natural ordering for objects of the class that implements it. This is usually the default, most logical way to sort the objects (e.g., sorting an Employee class by ID).
+Implementation: The class whose objects are to be sorted must implement the Comparable<T> interface and override the single method:
+public int compareTo(T otherObject)
+
+Result of compareTo(T other):
+Negative integer: this object is less than otherObject.
+Zero: this object is equal to otherObject.
+Positive integer: this object is greater than otherObject.
+
+
 
 9.  **WHAT IS A FAIL-FAST ITERATOR?**
     * **Answer:** An iterator (like the one returned by `ArrayList.iterator()`) that immediately throws a **`ConcurrentModificationException`** if the collection is structurally modified by any other thread (or code) during the iteration. It is used to detect errors early.
