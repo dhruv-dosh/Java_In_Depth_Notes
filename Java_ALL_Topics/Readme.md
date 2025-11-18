@@ -1,6 +1,5 @@
 # Java Interview Definitions - Complete Guide
 
-I'll provide you with clear, concise interview-ready definitions for all these topics.
 
 ## 1. Java (JDK, JVM, JRE)
 
@@ -528,12 +527,4 @@ Syntax: `(parameters) -> expression` or `(parameters) -> { statements; }`
 
 ---
 
-## Quick Interview Tips:
-
-1. **Be concise**: Start with a one-line definition
-2. **Give examples**: If asked, provide simple code examples
-3. **Connect concepts**: Show how topics relate (e.g., inheritance enables polymorphism)
-4. **Know the "why"**: Understand why features exist (e.g., synchronized prevents data inconsistency)
-5. **Practice saying these aloud**: It helps with fluency during interviews
-
-Good luck with your interviews! 🎯
+Author - Dhruv Doshi.
