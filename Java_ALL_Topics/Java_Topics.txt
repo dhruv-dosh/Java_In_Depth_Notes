@@ -1,0 +1,114 @@
+Java
+
+(Declared, Initialized, Invoked, Executed, implement)
+
+1.Java ( JDK,JVM,JRE)
+2.Var , Literals , Identifiers.
+3.Java Operators.
+
+4.Data Type.(Primitive And Non Primitive)
+5.Arrays
+6.String & String Builder.
+
+7.Expression, Statement, Block.
+
+
+8.Java Flow Control.(if else, else if , ternary)(Switch case (contains default block)
+9.Loops.(for and for each, while and do while)
+10.Jump Statement.(Break, Break Labeled, Continue, Continue Labeled)
+
+11.Oops Basic Concepts 
+11.1. Classes , Object , GENERICS Feature.
+11.2. Method. (Static Methods, Standard Library Methods, Method Signature)
+11.2.1 Dynamic Method Dispatch.
+11.3. Method Overloading.
+11.4. Constructor.(types , explicit Constructor Invocation, Private Constructor)(X be abstract , Static Or Final)
+11.5. Singleton Class. ( private const, Private Static instance var, Public Static Get Method)
+11.6. Static Keyword. ( Static Variable,  Static Method, Static Block)(non access Modifiers)
+11.7. Nested Class. ( Static and Non-Static)---------------------------------------------------------------------------------------
+11.8. Access Modifiers. (Private, default, Protected, public)
+11.9. This keyword. (Inside Method Or Constructor)
+11.10. Final keyword (Defines Constant)
+11.11. Recursion. ( Recursive Methods)
+
+
+12.Oops Main Concepts.(Encapsulation, Abstraction, polymorphism, Inheritance)
+12.1. Java Inheritance.(key purpose is Code Reusability & Method Overriding(Method Signature Has To be Same))
+12.2. Super Keyword.
+12.3. Type Of Inheritance.
+12.4. Abstract Classes, Abstract Method.
+12.5. Interfaces.
+12.6. Polymorphism. (Run Time , Compile Time), Polymorphic Variable, Generics.
+12.7. Java Encapsulation.(Data Hiding)
+12.8. Anonymous Classes.
+12.9. Singleton Classes.
+12.10. Packages.
+12.11. Java Enum.
+
+13. Exception
+13.1. Runtime.(Unchecked and Do have to correct the code)
+13.2. I/O Exception.(compile time exception) ( checked exception can be handled)
+13.3. Exception Handling.(try-catch-finally block)(Throw and Throws)(multiple catch block or |)
+13.4. Custom Exception.( extending Exception Class)
+
+14.Annotations
+14.1. Marked(normal) , Single-value , full(multiple value), Repeating , Type Annotation. 
+14.2. Custom Annotation (@interface), Predefined, Meta.
+14.3. Logging.
+
+15. Multithreading.
+15.1. Threads.
+15.2. Multitasking.
+15.3. Multithreading.
+15.4. Single Core & Multiple Core.
+15.5. Thread In Java Creation.(Runnable interface & Thread Class)
+15.6. Threads Method.
+15.7. User & Daemon Thread.
+15.8. Synchronisation & Synchronised Keyword.
+15.9. Locks.(Intrinsic & Explicit)(Acquire & Release)
+15.10. Re-Entrant Lock and Read-Write Lock.
+15.11. Disadvantages Of Synchronized.
+15.12. Thread Communication.
+15.13. Thread Safety.
+
+
+16. Collections.
+16.1. Inerrable Interface.
+16.2. Collection Interface.
+16.3. List Interface.(Array List, Linked List, Vector, Stack).
+16.4. Set Interface. (hash set, linked hash set, tree set).
+16.5. Comparable & Comparator.
+16.6. Queue. (LinkedList, Priority Queue).
+16.7. Dequeue. (Array Deque, LinkedList).
+16.8. Map. (HashMap, Liked HashMap, Tree Map)
+
+
+17. Java8
+17.1. Lambda Expression. (Anonymous Function)
+17.2. Functional Programing.------------------------
+17.3. Functional Interface. (FUNCTION, PREDICATE, CONSUMER, SUPPLIER)
+17.4. Streams.
+
+
+18.Bit Manipulation
+18.1. Clear Bit.
+18.2. Get Bit.
+18.3. Set Bit.
+18.4. Update Bit. 
+
+19.Heap. (Complete Binary Tree)(Implemented Using Array Triverse tree lest to right)
+19.1. Min Heap.
+19.2. Max Heap.
+19.3. Insertion, Deletion, 
+
+20.Binary Tree
+20.1. Types Of binary Tree.
+
+21.Prefix, Infix, postfix.
+21.1. Infix to Postfix.
+21.2. Infix to Prefix.
+21.3. Postfix to Infix.
+
+22. Monotonic Stack----------------------------------
+
+
