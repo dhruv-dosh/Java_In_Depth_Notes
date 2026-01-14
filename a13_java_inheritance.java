@@ -51,3 +51,70 @@ public class a13_java_inheritance {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Parent class (Base class)
+class Animal {
+    String name;
+    int age;
+    
+    void eat() {
+        System.out.println(name + " is eating");
+    }
+    
+    void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+}
+
+// Child class (Derived class) - inherits from Animal
+class Dog extends Animal {
+    String breed;
+    
+    // Dog inherits name, age, eat(), and sleep() from Animal
+    // Dog adds its own specific method
+    void bark() {
+        System.out.println(name + " is barking: Woof!");
+    }
+}
+
+// Another child class
+class Cat extends Animal {
+    // Cat also inherits from Animal
+    void meow() {
+        System.out.println(name + " is meowing: Meow!");
+    }
+}
+
+// Usage
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.name = "Buddy";
+        myDog.age = 3;
+        myDog.breed = "Golden Retriever";
+        
+        myDog.eat();    // Inherited from Animal
+        myDog.sleep();  // Inherited from Animal
+        myDog.bark();   // Dog's own method
+        
+        Cat myCat = new Cat();
+        myCat.name = "Whiskers";
+        myCat.age = 2;
+        
+        myCat.eat();    // Inherited from Animal
+        myCat.sleep();  // Inherited from Animal
+        myCat.meow();   // Cat's own method
+    }
+}
